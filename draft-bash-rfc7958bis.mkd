@@ -164,24 +164,10 @@ This is in the seventh paragraph of {{xml_semantics}}.
 
 # IANA DNSSEC Root Zone Trust Anchor Formats and Semantics {#ta_formats}
 
-IANA publishes trust anchors for the root zone in three formats:
-
-- an XML document that contains the hashes of the DNSKEY records
-
-- certificates in PKIX format {{RFC5280}} that contain DS records and
-the full public key of DNSKEY records
-
-- Certificate Signing Requests (CSRs) in PKCS #10 format {{RFC2986}}
-that contain DS records and the full public key of DNSKEY records
-
-These formats and the semantics associated with each are described in
-the rest of this section.
-
-## Hashes in XML {#hashes}
-
-The XML document contains a set of hashes for the DNSKEY records that
-can be used to validate the root zone.  The hashes are consistent
-with the defined presentation format of DS resource .
+IANA publishes trust anchors for the root zone in as an XML document that
+contains the hashes of the DNSKEY records. The XML document contains a set of
+hashes for the DNSKEY records that can be used to validate the root zone. The
+hashes are consistent with the defined presentation format of DS resource.
 
 ### XML Syntax {#xml_syntax}
 
@@ -330,12 +316,6 @@ Figure 2 describes two fictitious trust anchors for the root zone.
 
                            Figure 2
 ~~~
-
-## Certificate Signing Requests
-
-Each public key that can be used as a trust anchor is represented as
-a CSR in PKCS #10 format.  The SubjectPublicKeyInfo and Subject field
-are the same as for certificates (see {{certs}} above).
 
 
 # Root Zone Trust Anchor Retrieval {#retrieving}
